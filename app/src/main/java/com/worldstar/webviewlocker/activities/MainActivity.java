@@ -1,10 +1,14 @@
-package com.worldstar.webviewlocker;
+package com.worldstar.webviewlocker.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+
+import com.worldstar.webviewlocker.R;
+import com.worldstar.webviewlocker.services.LockService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mWebView = (WebView) findViewById(R.id.webView);
+
+        // Start background service.
+        startService(new Intent(this, LockService.class));
     }
 
     @Override
