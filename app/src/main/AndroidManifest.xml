@@ -22,6 +22,8 @@
         </activity>
 
         <service android:name=".services.LockService" />
+
+        <receiver android:name=".services.AlarmReceiver" />
     </application>
 
 </manifest>
