@@ -26,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+            String intentAction = getIntent().getAction();
+            if (intentAction == null) {
+                getSupportActionBar().show();
+            } else {
+                getSupportActionBar().hide();
+            }
         }
 
         mWebView = (WebView) findViewById(R.id.webView);
